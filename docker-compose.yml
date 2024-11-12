@@ -1,0 +1,41 @@
+services:
+  satisfactory-server:
+    container_name: 'satisfactory-server'
+    hostname: 'satisfactory-server'
+    image: 'wolveix/satisfactory-server:latest'
+    environment:
+      - MAXPLAYERS=4
+      - PGID=1000
+      - PUID=1000
+      - ROOTLESS=false
+      - STEAMBETA=false
+    deploy:
+      resources:
+        limits:
+          memory: 10G
+        reservations:
+          memory: 4G
+    ports:
+      - "7777:7777"
+    volumes:
+      - './satisfactory-server:/config'
+      # fixing the timezone
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.27.2
+    # build: 
+    #   context: ./nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/site:/usr/share/nginx/html
+      - ./nginx/log:/var/log/nginx/
+      # fixing the timezone
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    restart: always

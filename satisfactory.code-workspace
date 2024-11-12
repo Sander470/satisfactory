@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "satisfactory",
+			"path": "."
+		},
+		{
+			"path": "nginx"
+		},
+		{
+			"path": "node"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "satisfactory"
+	}
+}
