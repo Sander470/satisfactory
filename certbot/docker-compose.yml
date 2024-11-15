@@ -1,0 +1,17 @@
+services:
+  certbot:
+    image: certbot/dns-cloudflare:latest
+    container_name: certbot
+    
+    command: >
+      certonly --dns-cloudflare --dns-cloudflare-credentials /cloudflare.ini 
+      -d ${DOMAIN} -d ${WILDCARD_DOMAIN} -m ${EMAIL} 
+      --agree-tos --non-interactive --force-renewal --test-cert
+
+    volumes:
+      - ./credentials.ini:/cloudflare.ini:ro
+      - ./letsencrypt:/etc/letsencrypt
+      - ./letsencrypt/log:/var/log/letsencrypt
+      # fixing the timezone
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro

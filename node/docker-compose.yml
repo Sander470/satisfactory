@@ -1,0 +1,11 @@
+services:
+  node:
+    container_name: node.js
+    build: .
+    image: node:23.1.0
+    ports:
+    - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    environment:
+    - PORT=3000

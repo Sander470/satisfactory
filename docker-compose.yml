@@ -44,6 +44,7 @@ services:
     volumes:
       - ./nginx/site:/usr/share/nginx/html
       - ./nginx/log:/var/log/nginx/
+      - ./certificates:/etc/letsencrypt
       # fixing the timezone
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
