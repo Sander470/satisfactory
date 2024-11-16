@@ -26,6 +26,14 @@ A project that:
     │   └── saved/
     ├── docker-compose.yml
     └── cron_job-installer.sh
+certbot/letsencrypt/live/ contains the certificates.
+certbot/secrets/ requires a cloudflare.ini containing a dns_cloudflare_token and a .env containing the DOMAIN, WILDCARD_DOMAIN and EMAIL variables.
+nginx/config/ contains the nginx config and ./conf.d/ contains the website config
+nginx/site/ contains the files for the website.
+node/ contains the node.js api.
+server/ contains all the files and data for the satisfactory server.
+docker-compose.yml is the main file to run.
+cron_job-installer.sh enables/disables the cronjob for automatic certificate renewal through the certbot container.
 
 ## Required forwarded ports
 
