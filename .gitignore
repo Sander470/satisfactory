@@ -1,6 +1,3 @@
-password
 server/*
 certificates/*
-cloudflare/cloudflare.ini
-cloudflare.ini
-letsencrypt/log/*
+*/log/*

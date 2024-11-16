@@ -1,0 +1,19 @@
+services:
+  certbot:
+    image: certbot/dns-cloudflare:latest
+    container_name: certbot
+    env_file:
+      - ./secrets/.env
+    # command: >
+    #   certonly --dns-cloudflare --dns-cloudflare-credentials /cloudflare.ini 
+    #   -d ${DOMAIN} -d ${WILDCARD_DOMAIN} -m ${EMAIL} 
+    #   --agree-tos --non-interactive --test-cert
+    volumes:
+      - ./secrets/cloudflare.ini:/cloudflare.ini:ro
+      - ./letsencrypt:/etc/letsencrypt
+      - ./log/letsencrypt:/var/log/letsencrypt
+      # fixing the timezone
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: "/bin/sh /entrypoint.sh"
