@@ -1,4 +1,4 @@
-# Satisfactory server with NGINX website (automated certbot SSL), API
+# Satisfactory server project
 
 A project that:
 
