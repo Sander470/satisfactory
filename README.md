@@ -2,7 +2,7 @@
 
 ## File Structure
 
-    ``satisfactory/
+    satisfactory/
     ├── certbot/
     │   ├── letsencrypt/
     │   │   └── live/
@@ -18,4 +18,4 @@
     ├── server/
     │   └── saved/
     ├── docker-compose.yml
-    └── cron_job-installer.sh``
+    └── cron_job-installer.sh
