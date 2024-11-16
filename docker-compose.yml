@@ -8,6 +8,8 @@ services:
       - '7777:7777/tcp'
     volumes:
       - './server:/config'
+      - './certbot/letsencrypt/live/jjgrootjans.com/privkey.pem:/config/gamefiles/FactoryGame/Certificates/private_key.pem'
+      - './certbot/letsencrypt/live/jjgrootjans.com/fullchain.pem:/config/gamefiles/FactoryGame/Certificates/cert_chain.pem'
       # fixing the timezone
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
@@ -37,18 +39,18 @@ services:
 
 
 
-  node:
-    container_name: node.js
-    build: ./node
-    image: node:23.1.0
-    ports:
-    - 3000:3000
-    volumes:
-      - .node:/usr/src/app
-    environment:
-    - PORT=3000
-    networks:
-      - satisfactory-cluster
+  # node:
+  #   container_name: node.js
+  #   build: ./node
+  #   image: node:23.1.0
+  #   ports:
+  #   - 3000:3000
+  #   volumes:
+  #     - .node:/usr/src/app
+  #   environment:
+  #   - PORT=3000
+  #   networks:
+  #     - satisfactory-cluster
 
 
 
