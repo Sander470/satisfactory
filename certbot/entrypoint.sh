@@ -9,7 +9,7 @@ fi
 # Run Certbot to request certificates (or renew them)
 certbot certonly --dns-cloudflare --dns-cloudflare-credentials /cloudflare.ini \
     -d "$DOMAIN" -d "$WILDCARD_DOMAIN" -m "$EMAIL" \
-    --agree-tos --non-interactive --test-cert
+    --agree-tos --non-interactive
 
 # Check if Certbot was successful
 if [ $? -eq 0 ]; then

@@ -2,4 +2,3 @@ cloudflare.ini
 .env
 secrets/*
 letsencrypt/*
-# log/*
