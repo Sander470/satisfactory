@@ -48,3 +48,10 @@ A project that:
 - A / AAAA record *.jjgrootjans.com -> {ip} (can be proxied)
 - A / AAAA record satisfactory.jjgrootjans.com -> {ip} (can NOT be proxied)
 - (optional) CNAME www -> jjgrootjans.com
+
+## Note to self
+
+When using Docker, to have containers talk to eachother they need to:
+
+- Be on the same Docker Network
+- Use eachothers' container names; NOT 127.0.0.1 or localhost or whatever.
