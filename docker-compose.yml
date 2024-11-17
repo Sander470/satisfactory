@@ -39,18 +39,18 @@ services:
 
 
 
-  # node:
-  #   container_name: node.js
-  #   build: ./node
-  #   image: node:23.1.0
-  #   ports:
-  #   - 3000:3000
-  #   volumes:
-  #     - .node:/usr/src/app
-  #   environment:
-  #   - PORT=3000
-  #   networks:
-  #     - satisfactory-cluster
+  node:
+    container_name: node.js
+    build: ./node
+    image: node:23.1.0
+    ports:
+    - 3000:3000
+    volumes:
+      - ./node:/usr/src/app
+    environment:
+    - PORT=3000
+    networks:
+      - satisfactory-cluster
 
 
 

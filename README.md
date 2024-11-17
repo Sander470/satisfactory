@@ -45,6 +45,6 @@ A project that:
 
 ## DNS Setup
 
-- A / AAAA record jjgrootjans.com -> {ip} (can be proxied)
+- A / AAAA record *.jjgrootjans.com -> {ip} (can be proxied)
 - A / AAAA record satisfactory.jjgrootjans.com -> {ip} (can NOT be proxied)
 - (optional) CNAME www -> jjgrootjans.com

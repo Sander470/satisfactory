@@ -13,11 +13,11 @@ indent_size = 4
 [*.{yml,yaml}]
 indent_size = 2
 
-[*.{js,py}]
+[*.{js}]
 indent_size = 4
-
-[lib/**.js]
-indent_size = 2
 
 [package.json]
 indent_size = 2
+
+[**/log/**]
+indent_size = unset

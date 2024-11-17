@@ -7,5 +7,6 @@ console.log(`server listening on port ${port}`)
 
 server.get('/', (req, res) => {
     console.log('HI');
-    res.send("hi");
+    res.send("<h1>hi</h1>");
 })
+
