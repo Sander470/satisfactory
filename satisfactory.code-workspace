@@ -15,6 +15,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "satisfactory"
+		"liveServer.settings.multiRootWorkspaceName": "satisfactory",
+		"liveServer.settings.port": 5501
 	}
 }
