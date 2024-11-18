@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter/Inter-Italic.woff2') format('woff2'),
+        url('./assets/fonts/Inter/Inter-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter/Inter-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Inter/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --startgradient: linear-gradient(135deg, #0b360d 0%, #49d209 100%);
     --stopgradient: linear-gradient(135deg, #340000 0%, #c60000 100%);
@@ -19,7 +37,7 @@ body, html {
 
 body {
     margin: 0;
-    background-image: url("./img/background.jpg");
+    background-image: url("./assets/img/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -46,17 +64,17 @@ p {
     font-style: normal;
 }
 p.fontnormal {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 p.fontsmall {
-    font-size: 1rem;
+    font-size: 1.875rem;
 }
 
 .cpanel {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 40px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     justify-self: center;
     align-self: center;
     display: grid;
@@ -73,12 +91,13 @@ p.fontsmall {
 
 .uielement {
     border-radius: 28px;
-    padding: 1rem;
+    padding: 0.5rem;
     box-shadow: 25px 25px 15px 5px rgba(100,100,100,0.5);
     display: grid;
     grid-template-columns: 5rem auto;
     background-blend-mode: normal;
     height: 100px;
+    box-sizing: content-box;
 }
 
 .uicontainer {
@@ -97,6 +116,11 @@ p.fontsmall {
 .status {
     grid-row: 1 / span 1;
     width: 47.25vw;
+}
+.rldlink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .buttons {
     grid-row: 2 / span 2;
