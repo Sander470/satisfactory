@@ -18,12 +18,30 @@
     font-display: swap;
 }
 
+@media only screen and (max-width: 1920px) {
+    .status {
+        width: calc(var(--statuswidth) * 0.75);
+    }
+    .button {
+        width: calc(var(--buttonwidth) * 0.75);
+    }
+    .cpanel {
+        width: calc(var(--menuwidth) * 0.75);
+        height: calc(var(--menuheight) * 0.75)
+    }
+}
+
 :root {
     --startgradient: linear-gradient(135deg, #0b360d 0%, #49d209 100%);
     --stopgradient: linear-gradient(135deg, #340000 0%, #c60000 100%);
     --restartgradient: linear-gradient(135deg, #0e103b 0%, #431abf 100%);
     --inactivegradient: linear-gradient(135deg, #1f1f1f 0%, #787878 100%);
     --logingradient: linear-gradient(135deg, #3d0453 0%, #bf69d5 100%);
+    --buttonwidth: 800px;
+    --statuswidth: 1200px;
+    --menuwidth: 1500px;
+    --menuheight: 1000px;
+    --shadow: 25px 25px 15px 5px rgba(100,100,100,0.5);
 }
 
 * {
@@ -42,8 +60,6 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100dvh;
-/*    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 1fr 1fr 1fr 1fr 1fr 1fr; */
     display: grid;
 }
 
@@ -52,6 +68,19 @@ a {
 }
 a:visited {
     color: inherit;
+}
+button {
+    background-color: inherit;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+}
+div.inactive button:hover {
+    cursor: not-allowed;
+}
+button.inactive:hover {
+    cursor: not-allowed;
 }
 
 p {
@@ -84,15 +113,15 @@ p.fontsmall {
     align-items: center;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 2rem;
-    width: 60vw;
-    height: 80vh;
-    box-shadow: 25px 25px 15px 5px rgba(100,100,100,0.5);
+    width: var(--menuwidth);
+    height: var(--menuheight);
+    box-shadow: var(--shadow);
 }
 
 .uielement {
     border-radius: 28px;
     padding: 0.5rem;
-    box-shadow: 25px 25px 15px 5px rgba(100,100,100,0.5);
+    box-shadow: var(--shadow);
     display: grid;
     grid-template-columns: 5rem auto;
     background-blend-mode: normal;
@@ -115,7 +144,7 @@ p.fontsmall {
 }
 .status {
     grid-row: 1 / span 1;
-    width: 47.25vw;
+    width: var(--statuswidth);
 }
 .rldlink {
     display: flex;
@@ -124,11 +153,9 @@ p.fontsmall {
 }
 .buttons {
     grid-row: 2 / span 2;
-    /* justify-items: space-between; */
 }
-
 .button {
-    width: 31.5vw;
+    width: var(--buttonwidth);
 }
 
 img.icon {
@@ -138,7 +165,7 @@ img.icon {
     justify-self: center;
 }
 
-.uielement > .container {
+.uielement > p, .uielement > .container {
     grid-column: 2 / span 1;
     justify-self: center;
     align-self: center;
@@ -157,3 +184,11 @@ img.icon {
     background: var(--restartgradient);
 }
 
+
+
+.confirmdialogue {
+    display: none;
+}
+p#confirm {
+    display: none;
+}
