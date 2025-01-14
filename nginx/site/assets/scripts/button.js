@@ -1,4 +1,4 @@
-function makeCall(button) {
+function makeServerState(button) {
     const buttonName = button.name;
     let confirm = document.getElementById("confirm")
 

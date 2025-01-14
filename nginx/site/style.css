@@ -23,7 +23,7 @@
         width: calc(var(--statuswidth) * 0.75);
     }
     .button {
-        width: calc(var(--buttonwidth) * 0.75);
+        width: calc(var(--cPanelButtonwidth) * 0.75);
     }
     .cpanel {
         width: calc(var(--menuwidth) * 0.75);
@@ -37,7 +37,7 @@
     --restartgradient: linear-gradient(135deg, #0e103b 0%, #431abf 100%);
     --inactivegradient: linear-gradient(135deg, #1f1f1f 0%, #787878 100%);
     --logingradient: linear-gradient(135deg, #3d0453 0%, #bf69d5 100%);
-    --buttonwidth: 800px;
+    --cPanelButtonwidth: 800px;
     --statuswidth: 1200px;
     --menuwidth: 1500px;
     --menuheight: 1000px;
@@ -55,7 +55,8 @@ body, html {
 
 body {
     margin: 0;
-    background-image: url("./assets/img/background.jpg");
+    /* background-image: url("./assets/img/background.jpg"); */
+    background-color: rgb(153, 21, 21);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -99,11 +100,14 @@ p.fontsmall {
     font-size: 1.875rem;
 }
 
-.cpanel {
+.menubg {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 40px;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+}
+
+.panel {
     justify-self: center;
     align-self: center;
     display: grid;
@@ -114,8 +118,19 @@ p.fontsmall {
     grid-template-rows: 1fr 1fr 1fr;
     gap: 2rem;
     width: var(--menuwidth);
-    height: var(--menuheight);
     box-shadow: var(--shadow);
+}
+
+.cpanel {
+    height: var(--menuheight);
+}
+
+.confirmbuttons {
+    display: flex;
+}
+
+.confirmButtonContainer {
+    display: flex;
 }
 
 .uielement {
@@ -129,12 +144,6 @@ p.fontsmall {
     box-sizing: content-box;
 }
 
-.uicontainer {
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
 
 .statuscontainer {
     display: flex;
@@ -151,11 +160,15 @@ p.fontsmall {
     align-items: center;
     justify-content: center;
 }
-.buttons {
+.cPanelButtons {
     grid-row: 2 / span 2;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
-.button {
-    width: var(--buttonwidth);
+.cPanelButton {
+    width: var(--cPanelButtonwidth);
 }
 
 img.icon {
@@ -182,13 +195,4 @@ img.icon {
 }
 .restart {
     background: var(--restartgradient);
-}
-
-
-
-.confirmdialogue {
-    display: none;
-}
-p#confirm {
-    display: none;
 }

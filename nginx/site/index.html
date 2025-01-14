@@ -9,9 +9,9 @@
 <script src="./assets/scripts/button.js"></script>
 
 
-<div class="cpanel">
+<div class="panel cpanel menubg">
     <div class="status inactive uielement" id="status">
-        <button type="button" class="rldlink" onclick="makeCall(this)" name="refresh">
+        <button type="button" class="rldlink" onclick="makeServerState(this)" name="refresh">
             <img class="icon" src="./assets/img/server-status-refresh.svg" alt="refreshicon">
         </button>
         <div class="container statuscontainer">
@@ -19,21 +19,22 @@
             <p class="fontsmall" id="status">Unknown</p>
         </div>
     </div>
-    <div class="buttons uicontainer">
-        <button type="button" class="button inactive uielement" id="start" name="start" onclick="makeCall(this)">
+    <div class="cPanelButtons uicontainer">
+        <button type="button" class="cPanelButton inactive uielement" id="start" name="start" onclick="makeServerState(this)">
             <img src="./assets/img/server-start.svg" alt="starticon" class="icon">
             <p class="fontnormal">Start</p>
         </button>
-        <button type="button" class="button inactive uielement" id="stop" name="stop" onclick="makeCall(this)">
+        <button type="button" class="cPanelButton inactive uielement" id="stop" name="stop" onclick="makeServerState(this)">
             <img src="./assets/img/server-stop.svg" alt="stopicon" class="icon">
             <p class="fontnormal">Stop</p>
         </button>
-        <button type="button" class="button inactive uielement" id="restart" name="restart" onclick="makeCall(this)">
+        <button type="button" class="cPanelButton inactive uielement" id="restart" name="restart" onclick="makeServerState(this)">
             <img alt="restarticon" src="./assets/img/server-restart.svg" class="icon">
             <p class="fontnormal">Restart</p>
         </button>
     </div>
 </div>
+<p></p>
 
 <div id="confirmdialogue">
     <p id="confirm">
