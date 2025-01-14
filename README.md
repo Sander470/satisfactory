@@ -7,6 +7,8 @@ A project that:
 - includes an api that you can control and check the state of the server with
 - automatically gets/renews certificates
 
+(anyway that was the ambition, I've pretty much ditched the project since tho lol)
+
 ## File Structure
 
     satisfactory/
